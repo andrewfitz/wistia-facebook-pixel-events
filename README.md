@@ -1,4 +1,14 @@
-# wistia-facebook-pixel-events
+# Wistia Facebook Pixel Events JS API
+
+WistiaWatched is the custom Pixel event.
+1%
+25%
+50%
+75%
+95%
+100%
+
+Wistia video id, url, and percent are passed with each event parameters.
 
 Usage:
 Paste AFTER your Wistia video and FB pixel code. They must be initialized BEFORE this script runs.
