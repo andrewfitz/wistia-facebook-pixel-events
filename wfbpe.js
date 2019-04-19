@@ -1,11 +1,10 @@
-fnk = function fnk(pcw) {
-	fbq('trackCustom', 'WistiaWatched', {percent: pcw, url: window.location.href, id: video.hashedId()});
-}
-
 window._wq = window._wq || [];
 _wq.push({
   id: '_all',
   onReady(video) {
+  	function fnk(pcw) {
+		fbq('trackCustom', 'WistiaWatched', {percent: pcw, url: window.location.href, id: video.hashedId()});
+	}
     const secondsWatchedDisplay = document.getElementById('seconds_watched_display');
 	    video.bind('percentwatchedchanged', (percent, lastPercent) => {
 		  if (percent >= .01 && lastPercent < .01) {
