@@ -7,8 +7,13 @@ _wq.push({
   id: '_all',
   onReady(video) {
   	const vhid = video.hashedId();
-    const secondsWatchedDisplay = document.getElementById('seconds_watched_display');
-	    video.bind('percentwatchedchanged', (percent, lastPercent) => {
+   	const secondsWatchedDisplay = document.getElementById('seconds_watched_display');
+	  
+	video.bind('conversion', function(type, emaily, firstName, lastName) {
+		fbq('trackCustom', 'WistiaConversion', {url: window.location.href, id: vhid});
+	});
+	  
+	video.bind('percentwatchedchanged', (percent, lastPercent) => {
 		  if (percent >= .01 && lastPercent < .01) {
 		    fnk('1',vhid);
 		  } else if (percent >= .25 && lastPercent < .25) {
