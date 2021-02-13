@@ -1,6 +1,8 @@
 function fnk(pcw, idv) {
 	fbq('trackCustom', 'WistiaWatched', {percent: pcw, url: window.location.href, id: idv});
-	//console.log(pcw);
+}
+function fnkc(idv) {
+	fbq('trackCustom', 'WistiaConversion', {url: window.location.href, id: idv});
 }
 window._wq = window._wq || [];
 _wq.push({
@@ -9,8 +11,8 @@ _wq.push({
   	const vhid = video.hashedId();
    	const secondsWatchedDisplay = document.getElementById('seconds_watched_display');
 	  
-	video.bind('conversion', function(type, emaily, firstName, lastName) {
-		fbq('trackCustom', 'WistiaConversion', {url: window.location.href, id: vhid});
+	video.bind('conversion', function(type, email, firstName, lastName) {
+		fnkc(vhid);
 	});
 	  
 	video.bind('percentwatchedchanged', (percent, lastPercent) => {
